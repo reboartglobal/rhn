@@ -50,7 +50,7 @@
 
       <div id="mobile-menu" class="absolute top-full left-0 w-full bg-white shadow-lg p-4 hidden md:hidden">
         <div class="space-y-2">
-          <button id="layanan-toggle" class="w-full text-left hover:text-blue-600">Layanan ▼</button>
+          <button id="layanan-toggle" class="w-full text-left hover:text-blue-600">Layanan</button>
           <div id="layanan-submenu" class="ml-4 space-y-2 hidden">
             <a href="#paket" class="block hover:text-blue-600">Paket Internet</a>
             <a href="#cek-lokasi" class="block hover:text-blue-600">Cek Lokasi</a>
@@ -69,7 +69,7 @@
     <!-- Hero Section -->
     <section class="py-20 bg-blue-100 text-center" id="hero">
       <div class="max-w-4xl mx-auto px-6">
-        <img src="https://source.unsplash.com/featured/?internet,technology" alt="Internet Cepat dan Stabil" class="w-full h-64 object-cover rounded-2xl mb-8 shadow-md" loading="lazy" />
+        <img src="../img/animated.png" alt="Internet Cepat dan Stabil" class="w-full h-64 object-cover rounded-2xl mb-8 shadow-md" loading="lazy" />
         <h2 class="text-4xl font-bold mb-4 text-blue-700">Internet Cepat & Stabil</h2>
         <p class="text-lg mb-6">Solusi terbaik untuk rumah dan bisnis Anda. Hadir dengan teknologi terbaru dan dukungan profesional 24/7.</p>
         <a href="#paket" class="inline-block bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition">Lihat Paket</a>
@@ -144,6 +144,7 @@
   <section id="pesan" class="py-20 bg-white">
   <div class="max-w-4xl mx-auto px-6">
     <h2 class="text-3xl font-bold text-center text-blue-700 mb-8">Formulir Pemesanan Online</h2>
+    
     <form id="wa-form" class="bg-blue-50 p-8 rounded-2xl shadow-lg space-y-6">
 
       <div>
@@ -166,28 +167,75 @@
         </select>
       </div>
 
-      <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">Kirim Pemesanan</button>
+      <div id="location-info" class="text-sm text-gray-600">
+        <button type="button" onclick="getLocation()" class="mt-4 px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition">
+          Ambil Lokasi Saya 📍
+        </button>
+        <p id="coords" class="mt-2"></p>
+      </div>
+
+      <input type="hidden" id="latitude">
+      <input type="hidden" id="longitude">
+
+      <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition mt-6">Kirim Pemesanan</button>
 
     </form>
   </div>
 </section>
 
 <script>
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition, showError);
+  } else {
+    document.getElementById("coords").innerHTML = "Geolocation tidak didukung di browser ini.";
+  }
+}
+
+function showPosition(position) {
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  document.getElementById("coords").innerHTML = `Lokasi Anda: Latitude: ${lat}, Longitude: ${lon}`;
+  document.getElementById("latitude").value = lat;
+  document.getElementById("longitude").value = lon;
+}
+
+function showError(error) {
+  switch(error.code) {
+    case error.PERMISSION_DENIED:
+      document.getElementById("coords").innerHTML = "Izin lokasi ditolak.";
+      break;
+    case error.POSITION_UNAVAILABLE:
+      document.getElementById("coords").innerHTML = "Informasi lokasi tidak tersedia.";
+      break;
+    case error.TIMEOUT:
+      document.getElementById("coords").innerHTML = "Permintaan lokasi terlalu lama.";
+      break;
+    case error.UNKNOWN_ERROR:
+      document.getElementById("coords").innerHTML = "Terjadi kesalahan tidak diketahui.";
+      break;
+  }
+}
+
 document.getElementById('wa-form').addEventListener('submit', function(e){
   e.preventDefault();
   
   let nama = document.getElementById('nama').value;
   let alamat = document.getElementById('alamat').value;
   let paket = document.getElementById('paket').value;
+  let latitude = document.getElementById('latitude').value;
+  let longitude = document.getElementById('longitude').value;
 
   let nomorWA = '6285786154236'; // Ganti dengan nomor WA kamu
-  let pesan = `Halo, saya ingin memesan layanan:\n\nNama: ${nama}\nAlamat: ${alamat}\nPaket: ${paket}`;
+  let pesan = `Halo, saya ingin memesan layanan:\n\nNama: ${nama}\nAlamat: ${alamat}\nPaket: ${paket}\n\nKoordinat Lokasi:\nLatitude: ${latitude}\nLongitude: ${longitude}`;
 
   let url = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`;
 
   window.open(url, '_blank');
 });
 </script>
+
+
 
 
   <!-- Kontak -->
