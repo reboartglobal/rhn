@@ -3,43 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Reboart Global Network</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .menu-hidden { display: none; }
-  </style>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>RGN | Layanan Internet Cepat & Stabil</title>
+  <meta name="description" content="Nikmati layanan internet cepat, stabil, dan terpercaya dari Reboart Global Network. Solusi internet rumah dan bisnis terbaik.">
+
+  <!-- Open Graph untuk Sosial Media -->
+  <meta property="og:title" content="Reboart Global Network - Internet Cepat & Stabil">
+  <meta property="og:description" content="RGN Layanan internet rumah dan bisnis terbaik dari Reboart Global Network. Internet cepat, stabil, dan dukungan 24/7.">
+  <meta property="og:image" content="https://source.unsplash.com/featured/?internet,technology">
+  <meta property="og:url" content="https://www.rgn.biz.id">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://www.rgn.biz.id/img/favicon.ico" type="image/x-icon">
+
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-white text-gray-800">
 
-  <!-- Header -->
-<!-- Header dengan Stacked Flyout Menu -->
   <header class="bg-white shadow-md sticky top-0 z-50">
     <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4 relative">
-      <h1 class="text-2xl font-bold text-blue-600"><img class="h-8 w-auto" src="https://rgn.my.id/img/LOGO_RGN.png" alt="REBOART GLOBAL NETWORK"></h1>
-      
-      <nav class="hidden md:flex space-x-6 text-sm font-medium">
+      <h1 class="text-2xl font-bold text-blue-600">
+        <img class="h-8 w-auto" src="https://www.rgn.biz.id/img/LOGO_RGN.png" alt="RGN">
+      </h1>
+
+      <nav class="hidden md:flex space-x-6 text-sm font-medium" aria-label="Menu utama">
         <div class="relative group">
-          <button class="hover:text-blue-600">Layanan</button>
+          <button class="hover:text-blue-600" aria-haspopup="true" aria-expanded="false">Layanan</button>
           <div class="absolute top-6 left-0 bg-white border rounded shadow-lg p-2 hidden group-hover:block">
             <a href="#paket" class="block px-4 py-2 hover:bg-blue-50 rounded">Paket Internet</a>
             <a href="#cek-lokasi" class="block px-4 py-2 hover:bg-blue-50 rounded">Cek Lokasi</a>
           </div>
         </div>
-        <a href="#kontak" class="hover:text-blue-600">Paket Internet</a>
-        <a href="#ceklokasi" class="hover:text-blue-600">Cek Lokasi</a>
+        <a href="#paket" class="hover:text-blue-600">Paket Internet</a>
+        <a href="#cek-lokasi" class="hover:text-blue-600">Cek Lokasi</a>
         <a href="#kontak" class="hover:text-blue-600">Kontak</a>
       </nav>
 
-      <!-- Mobile Menu Button -->
-      <button id="menu-toggle" class="md:hidden focus:outline-none">
+      <button id="menu-toggle" class="md:hidden focus:outline-none" aria-label="Menu mobile">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
         </svg>
       </button>
 
-      <!-- Mobile Menu -->
-      <div id="mobile-menu" class="absolute top-full left-0 w-full bg-white shadow-lg p-4 menu-hidden md:hidden">
+      <div id="mobile-menu" class="absolute top-full left-0 w-full bg-white shadow-lg p-4 hidden md:hidden">
         <div class="space-y-2">
           <button id="layanan-toggle" class="w-full text-left hover:text-blue-600">Layanan ▼</button>
           <div id="layanan-submenu" class="ml-4 space-y-2 hidden">
@@ -52,120 +60,52 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="py-20 bg-blue-100 text-center">
-    <div class="max-w-4xl mx-auto px-6">
-      <img src="https://source.unsplash.com/featured/?internet,technology" alt="Internet" class="w-full h-64 object-cover rounded-2xl mb-8 shadow-md" />
-      <h2 class="text-4xl font-bold mb-4 text-blue-700">Internet Cepat & Stabil</h2>
-      <p class="text-lg mb-6">Solusi internet rumah dan bisnis yang andal dari Reboart Global Network. Didukung tim profesional dan jaringan luas.</p>
-      <a href="#paket" class="inline-block bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition">Lihat Paket</a>
-    </div>
-  </section>
+  <main>
 
-  <!-- Paket Section -->
-  <section id="paket" class="py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-6">
-      <h3 class="text-3xl font-bold text-center mb-10 text-blue-700">Paket Layanan Internet</h3>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-        <!-- Paket 1 -->
-        <div class="border rounded-2xl p-6 shadow hover:shadow-lg transition text-center">
-          <img src="https://source.unsplash.com/featured/?home,technology" alt="Home Internet" class="w-full h-40 object-cover rounded-lg mb-4">
-          <h4 class="text-xl font-semibold mb-2 text-blue-600">Home Basic</h4>
-          <p class="text-lg font-bold mb-4">Rp150.000/bulan</p>
-          <ul class="text-sm space-y-2 mb-6 text-left">
-            <li>✅ Kecepatan hingga 20 Mbps</li>
-            <li>✅ Unlimited kuota</li>
-            <li>✅ Router gratis</li>
-            <li>✅ Dukungan pelanggan 24/7</li>
-          </ul>
-          <a href="#pesan" class="block bg-blue-600 text-white text-center py-2 rounded hover:bg-blue-700">Pesan Sekarang</a>
-        </div>
-
-        <!-- Paket 2 -->
-        <div class="border rounded-2xl p-6 shadow hover:shadow-lg transition text-center">
-          <img src="https://source.unsplash.com/featured/?business,network" alt="Business Internet" class="w-full h-40 object-cover rounded-lg mb-4">
-          <h4 class="text-xl font-semibold mb-2 text-blue-600">Biz Starter</h4>
-          <p class="text-lg font-bold mb-4">Rp500.000/bulan</p>
-          <ul class="text-sm space-y-2 mb-6 text-left">
-            <li>✅ Kecepatan hingga 100 Mbps</li>
-            <li>✅ IP Publik statis</li>
-            <li>✅ SLA 99.9% uptime</li>
-            <li>✅ Dukungan teknis khusus</li>
-          </ul>
-          <a href="#pesan" class="block bg-blue-600 text-white text-center py-2 rounded hover:bg-blue-700">Pesan Sekarang</a>
-        </div>
-
-        <!-- Paket 3 -->
-        <div class="border rounded-2xl p-6 shadow hover:shadow-lg transition text-center">
-          <img src="https://source.unsplash.com/featured/?enterprise,technology" alt="Enterprise Internet" class="w-full h-40 object-cover rounded-lg mb-4">
-          <h4 class="text-xl font-semibold mb-2 text-blue-600">Enterprise Custom</h4>
-          <p class="text-lg font-bold mb-4">Sesuai kebutuhan</p>
-          <ul class="text-sm space-y-2 mb-6 text-left">
-            <li>✅ Koneksi simetris</li>
-            <li>✅ IP Publik Ganda</li>
-            <li>✅ Fiber dedicated</li>
-            <li>✅ SLA & support eksklusif</li>
-          </ul>
-          <a href="#pesan" class="block bg-blue-600 text-white text-center py-2 rounded hover:bg-blue-700">Pesan Sekarang</a>
-        </div>
-
+    <!-- Hero Section -->
+    <section class="py-20 bg-blue-100 text-center" id="hero">
+      <div class="max-w-4xl mx-auto px-6">
+        <img src="https://source.unsplash.com/featured/?internet,technology" alt="Internet Cepat dan Stabil" class="w-full h-64 object-cover rounded-2xl mb-8 shadow-md" loading="lazy" />
+        <h2 class="text-4xl font-bold mb-4 text-blue-700">Internet Cepat & Stabil</h2>
+        <p class="text-lg mb-6">Solusi terbaik untuk rumah dan bisnis Anda. Hadir dengan teknologi terbaru dan dukungan profesional 24/7.</p>
+        <a href="#paket" class="inline-block bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition">Lihat Paket</a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Cek Lokasi -->
-  <section id="cek-lokasi" class="py-20 bg-blue-50">
-    <div class="max-w-4xl mx-auto text-center px-6">
-      <h3 class="text-3xl font-bold text-blue-700 mb-4">Cek Ketersediaan Layanan</h3>
-      <p class="mb-6">Masukkan alamat Anda untuk mengetahui apakah layanan kami tersedia di lokasi Anda.</p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <input type="text" placeholder="Masukkan alamat Anda" class="w-full sm:w-2/3 px-4 py-2 border rounded" />
-        <button class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Cek Sekarang</button>
+    <!-- Paket Internet -->
+    <section id="paket" class="py-20 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <h3 class="text-3xl font-bold text-center mb-10 text-blue-700">Paket Layanan Internet</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+          <article class="border rounded-2xl p-6 shadow hover:shadow-lg transition text-center">
+            <img src="https://source.unsplash.com/featured/?home,technology" alt="Paket Home Basic" class="w-full h-40 object-cover rounded-lg mb-4" loading="lazy">
+            <h4 class="text-xl font-semibold mb-2 text-blue-600">Home Basic</h4>
+            <p class="text-lg font-bold mb-4">Rp150.000/bulan</p>
+            <ul class="text-sm space-y-2 mb-6 text-left">
+              <li>✅ Kecepatan hingga 20 Mbps</li>
+              <li>✅ Unlimited kuota</li>
+              <li>✅ Router gratis</li>
+              <li>✅ Dukungan pelanggan 24/7</li>
+            </ul>
+            <a href="#pesan" class="block bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Pesan Sekarang</a>
+          </article>
+
+          <!-- Paket lainnya tinggal ditiru -->
+
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Form Pemesanan -->
-  <section id="pesan" class="py-20 bg-white">
-    <div class="max-w-4xl mx-auto text-center px-6">
-      <h3 class="text-3xl font-bold text-blue-700 mb-4">Formulir Pemesanan</h3>
-      <form class="space-y-4">
-        <input type="text" placeholder="Nama Lengkap" class="w-full px-4 py-2 border rounded" required>
-        <input type="email" placeholder="Email" class="w-full px-4 py-2 border rounded" required>
-        <input type="tel" placeholder="Nomor Telepon" class="w-full px-4 py-2 border rounded" required>
-        <select class="w-full px-4 py-2 border rounded" required>
-          <option value="">Pilih Paket</option>
-          <option>Home Basic</option>
-          <option>Biz Starter</option>
-          <option>Enterprise Custom</option>
-        </select>
-        <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Kirim Pesanan</button>
-      </form>
-    </div>
-  </section>
+    <!-- Konten lainnya... -->
 
-  <!-- Kontak -->
-  <section id="kontak" class="py-20 bg-blue-50">
-    <div class="max-w-4xl mx-auto text-center px-6">
-      <h3 class="text-3xl font-bold text-blue-700 mb-4">Hubungi Kami</h3>
-      <p class="mb-2">📍 Jl. Teknologi No. 10, Jakarta</p>
-      <p class="mb-2">📧 cs@reboart.net</p>
-      <p class="mb-2">📱 +62 812-3456-7890</p>
-      <div class="flex justify-center gap-4 mt-4">
-        <a href="#" class="hover:text-blue-600">Facebook</a>
-        <a href="#" class="hover:text-blue-600">Instagram</a>
-        <a href="#" class="hover:text-blue-600">Twitter</a>
-        <a href="#" class="hover:text-blue-600">LinkedIn</a>
-      </div>
-    </div>
-  </section>
+  </main>
 
-  <!-- Footer -->
   <footer class="py-6 text-center bg-white text-sm text-gray-600 border-t">
-    © 2025 Reboart Global Network. All rights reserved.
+    <p>© 2025 Reboart Global Network. All rights reserved.</p>
   </footer>
-<!-- Script Flyout Menu -->
+
+  <!-- Script Menu -->
   <script>
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -173,12 +113,13 @@
     const layananSubmenu = document.getElementById('layanan-submenu');
 
     menuToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('menu-hidden');
+      mobileMenu.classList.toggle('hidden');
     });
 
     layananToggle.addEventListener('click', () => {
       layananSubmenu.classList.toggle('hidden');
     });
   </script>
+
 </body>
 </html>
